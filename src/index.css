@@ -1,0 +1,84 @@
+/* Simple, high-contrast styling that reads well on a classroom projector. */
+:root {
+  --blue: #1d4ed8;
+  --blue-dark: #1e3a8a;
+  --red: #b91c1c;
+  --green: #166534;
+  --bg: #f3f4f6;
+  --text: #111827;
+  --muted: #4b5563;
+  --border: #d1d5db;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+  background: var(--bg);
+  color: var(--text);
+}
+a { color: var(--blue); }
+h1 { margin-top: 0; }
+
+.navbar {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+  background: var(--blue-dark); color: #fff; padding: 12px 24px;
+}
+.navbar a { color: #fff; text-decoration: none; margin-right: 16px; font-weight: 600; }
+.navbar a:hover { text-decoration: underline; }
+.navbar nav { display: flex; flex-wrap: wrap; align-items: center; }
+.brand { font-size: 1.25rem; }
+
+.page { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.narrow { max-width: 480px; }
+.center-text { text-align: center; }
+.muted { color: var(--muted); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.form { display: flex; flex-direction: column; gap: 8px; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid var(--border); }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; align-items: center; }
+label { font-weight: 600; }
+input, select {
+  font-size: 1rem; padding: 10px; border: 1px solid #9ca3af; border-radius: 6px; width: 100%; background: #fff;
+}
+input:focus, select:focus, button:focus-visible { outline: 3px solid #93c5fd; }
+
+.btn {
+  font-size: 1rem; padding: 10px 18px; border: none; border-radius: 6px; cursor: pointer;
+  background: var(--blue); color: #fff; font-weight: 600;
+}
+.btn:hover { background: var(--blue-dark); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-light { background: #e5e7eb; color: var(--text); }
+.btn-light:hover { background: #d1d5db; }
+.btn-danger { background: var(--red); }
+.btn-danger:hover { background: #7f1d1d; }
+.btn-small { padding: 6px 12px; font-size: 0.9rem; }
+
+.message { padding: 12px 16px; border-radius: 6px; margin: 10px 0; border: 1px solid; }
+.message ul { margin: 6px 0 0; padding-left: 20px; }
+.message-error { background: #fee2e2; border-color: #fca5a5; color: #7f1d1d; }
+.message-success { background: #dcfce7; border-color: #86efac; color: var(--green); }
+.message-info { background: #dbeafe; border-color: #93c5fd; color: var(--blue-dark); }
+
+.filters { display: grid; grid-template-columns: 2fr 1fr auto; gap: 12px; margin-bottom: 16px; }
+@media (max-width: 700px) { .filters { grid-template-columns: 1fr; } }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.card h3 { margin: 0 0 4px; }
+.card p { margin: 6px 0; }
+.company { font-weight: 600; color: var(--blue-dark); }
+.tag { background: #e0e7ff; color: var(--blue-dark); padding: 2px 10px; border-radius: 999px; font-size: 0.9rem; }
+
+.panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+.panel h2 { margin-top: 0; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
+th { background: #f9fafb; }
+
+.role-badge { padding: 2px 10px; border-radius: 999px; font-size: 0.9rem; font-weight: 600; margin-right: 12px; }
+.role-admin { background: #fde68a; color: #78350f; }
+.role-student { background: #bbf7d0; color: #14532d; }
